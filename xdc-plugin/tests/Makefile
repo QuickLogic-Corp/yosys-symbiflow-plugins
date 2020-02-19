@@ -1,4 +1,4 @@
-TESTS = counter
+TESTS = counter ddr_uart
 
 all: $(TESTS)
 
