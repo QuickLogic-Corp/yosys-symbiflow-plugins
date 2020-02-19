@@ -1,0 +1,198 @@
+{
+  "IOBUF": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_1": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_10": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_11": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_12": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_13": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_14": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_15": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_2": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_3": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_4": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_5": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_6": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_7": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_8": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "IOBUF_9": {
+    "IN_TERM": "UNTUNED_SPLIT_40",
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "OBUFTDS": {
+    "IOSTANDARD": "DIFF_SSTL135",
+    "SLEW": "FAST"
+  },
+  "OBUFTDS_1": {
+    "IOSTANDARD": "DIFF_SSTL135",
+    "SLEW": "FAST"
+  },
+  "OBUFTDS_2": {
+    "IOSTANDARD": "DIFF_SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a0": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a1": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a10": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a11": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a12": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a13": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a2": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a3": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a4": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a5": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a6": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a7": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a8": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_a9": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_ba0": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_ba1": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_ba2": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_cas": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_cke": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_cs": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_dm0": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_dm1": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_odt": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_ras": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_rst": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  },
+  "obuf_we": {
+    "IOSTANDARD": "SSTL135",
+    "SLEW": "FAST"
+  }
+}

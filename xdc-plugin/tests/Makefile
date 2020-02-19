@@ -1,4 +1,4 @@
-TESTS = counter
+TESTS = counter ddr_uart
 
 all: $(TESTS)
 
@@ -15,6 +15,10 @@ $(1): $(1).json
 	fi
 
 $(1).json: $(1).v
+	env \
+	symbiflow-arch-defs_SOURCE_DIR=. \
+	OUT_SYNTH_V=$(1)_synth.v \
+	OUT_FASM_EXTRA=$(1)_fasm_extra.fasm \
 	PART_JSON=xc7a35tcsg324-1.json \
 	OUT_JSON=$(1).json \
 	INPUT_XDC_FILE=$(1).xdc \
@@ -31,4 +35,4 @@ update: $(foreach test,$(TESTS),update_$(test))
 
 
 clean:
-	rm -rf *.log $(foreach test,$(TESTS),$(test).json)
+	rm -rf *.log $(foreach test,$(TESTS),$(test).json) *_synth.v *.fasm *.premap.v
