@@ -30,7 +30,7 @@ echo
                 mkdir -p ~/.local-src
                 mkdir -p ~/.local-bin
                 cd ~/.local-src
-                git clone https://github.com/SymbiFlow/yosys.git -b ql-ios
+                git clone https://github.com/QuickLogic-Corp/yosys.git -b quicklogic-rebased
                 cd yosys
                 PREFIX=$HOME/.local-bin make -j$(nproc)
                 PREFIX=$HOME/.local-bin make install
