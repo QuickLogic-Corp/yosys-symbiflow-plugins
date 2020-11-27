@@ -184,6 +184,21 @@ struct QuicklogicIob : public Pass {
             }
         }
 
+        // Build a map of pad aliases to entries
+        std::unordered_map<std::string, std::vector<PinmapParser::Entry>> pinmapAliasMap;
+        for (auto& entry : pinmapParser.getEntries()) {
+            if (entry.count("alias") != 0) {
+                auto& alias = entry.at("alias");
+
+                if (pinmapAliasMap.count(alias) == 0) {
+                    pinmapAliasMap[alias] = std::vector<PinmapParser::Entry>();
+                }
+
+                pinmapAliasMap[alias].push_back(entry);
+            }
+        }
+
+
         // Check all IO cells
         log("Processing cells...");
         log("\n");
@@ -234,6 +249,29 @@ struct QuicklogicIob : public Pass {
                                 // Choose a correct entry for the cell
                                 auto entry = choosePinmapEntry(
                                     pinmapMap.at(constraint.padName),
+                                    ioCellType
+                                );
+
+                                padName = constraint.padName;
+
+                                // Location string
+                                if (entry.count("x") && entry.count("y")) {
+                                    locName = stringf("X%sY%s", 
+                                        entry.at("x").c_str(),
+                                        entry.at("y").c_str()
+                                    );
+                                }
+
+                                // Cell type
+                                if (entry.count("type")) {
+                                    cellType = entry.at("type");
+                                }
+                            } else if(pinmapAliasMap.count(constraint.padName)) {
+                                // Check if there is an entry in the pinmapAliasMap for this pad name
+
+                                // Choose a correct entry for the cell
+                                auto entry = choosePinmapEntry(
+                                    pinmapAliasMap.at(constraint.padName),
                                     ioCellType
                                 );
 
