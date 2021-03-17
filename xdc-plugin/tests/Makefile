@@ -1,34 +1,25 @@
-TESTS = counter
+# counter - basic test for IOSTANDARD, SLEW, DRIVE, IN_TERM properties
+# port_indexes - like counter but bus port indices are passes without curly braces
+# io_loc_pairs - test for LOC property being set on IOBUFs as the IO_LOC_PAIRS parameter
+# minilitex_ddr_arty - litex design with more types of IOBUFS including differential
+# package_pins - test for PACKAGE_PIN property being set on IOBUFs as the IO_LOC_PAIRS parameter
+TESTS = counter \
+	port_indexes \
+	io_loc_pairs \
+	minilitex_ddr_arty \
+	package_pins
 
-all: $(TESTS)
+include $(shell pwd)/../../Makefile_test.common
 
-define test_tpl =
-$(1): $(1).json
-	@python compare_output_json.py --json $$< --golden $(1)_golden.json; \
-	RETVAL=$$$$? ; \
-	if [ $$$$RETVAL -eq 0 ]; then \
-		echo "$(1) PASS"; \
-		true; \
-	else \
-		echo "$(1) FAIL"; \
-		false; \
-	fi
+json_test = python compare_output_json.py --json $(1)/$(1).json --golden $(1)/$(1).golden.json
 
-$(1).json: $(1).v
-	PART_JSON=xc7a35tcsg324-1.json \
-	OUT_JSON=$(1).json \
-	INPUT_XDC_FILE=$(1).xdc \
-	yosys -p "tcl synth.tcl" $$< -l yosys.log
-
-update_$(1): $(1).json
-	@python compare_output_json.py --json $$< --golden $(1)_golden.json --update
-
+define json_update =
+$(1)_update_json:
+	python compare_output_json.py --json $(1)/$(1).json --golden $(1)/$(1).golden.json --update
 endef
 
-$(foreach test,$(TESTS),$(eval $(call test_tpl,$(test))))
-
-update: $(foreach test,$(TESTS),update_$(test))
-
-
-clean:
-	rm -rf *.log $(foreach test,$(TESTS),$(test).json)
+counter_verify = $(call json_test,counter)
+port_indexes_verify = $(call json_test,port_indexes) && test $$(grep "'unknown' proc command handler" port_indexes/port_indexes.txt | wc -l) -eq 2
+io_loc_pairs_verify = $(call json_test,io_loc_pairs)
+minilitex_ddr_arty_verify = $(call json_test,minilitex_ddr_arty)
+package_pins_verify = $(call json_test,package_pins)

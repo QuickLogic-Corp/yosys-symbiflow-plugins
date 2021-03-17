@@ -1,4 +1,4 @@
-PLUGIN_LIST := fasm xdc
+PLUGIN_LIST := fasm xdc params sdc ql-iob design_introspection integrateinv ql-qlf-k4n8
 PLUGINS := $(foreach plugin,$(PLUGIN_LIST),$(plugin).so)
 PLUGINS_INSTALL := $(foreach plugin,$(PLUGIN_LIST),install_$(plugin))
 PLUGINS_CLEAN := $(foreach plugin,$(PLUGIN_LIST),clean_$(plugin))
@@ -29,3 +29,8 @@ install: $(PLUGINS_INSTALL)
 test: $(PLUGINS_TEST)
 
 clean: $(PLUGINS_CLEAN)
+
+CLANG_FORMAT ?= clang-format-5.0
+format:
+	find . -name \*.cc -and -not -path './third_party/*' -print0 | xargs -0 -P $$(nproc) ${CLANG_FORMAT} -style=file -i
+	find . -name \*.h -and -not -path './third_party/*' -print0 | xargs -0 -P $$(nproc) ${CLANG_FORMAT} -style=file -i
