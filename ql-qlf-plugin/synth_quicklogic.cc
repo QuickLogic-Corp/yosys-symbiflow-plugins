@@ -224,6 +224,7 @@ struct SynthQuickLogicPass : public ScriptPass {
                 run("shregmap -minlen 8 -maxlen 8");
             }
             if (family == "qlf_k6n10") {
+                run("async2sync");
                 run("dfflegalize -cell $_DFF_P_ 0");
             } else {
                 run("dfflegalize -cell $_DFF_P_ 0 -cell $_DFF_P??_ 0 -cell $_DFF_N_ 0 -cell $_DFF_N??_ 0");
